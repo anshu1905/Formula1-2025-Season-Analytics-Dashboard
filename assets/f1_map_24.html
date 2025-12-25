@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a82e234dbbe4a673cb37afc3a1abbc2c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_a82e234dbbe4a673cb37afc3a1abbc2c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a82e234dbbe4a673cb37afc3a1abbc2c = L.map(
+                "map_a82e234dbbe4a673cb37afc3a1abbc2c",
+                {
+                    center: [24.4672, 54.6031],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_a82e234dbbe4a673cb37afc3a1abbc2c);
+
+            
+
+        
+    
+            var tile_layer_7c8ddd07a9094c4caa71036de5b2be28 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_7c8ddd07a9094c4caa71036de5b2be28.addTo(map_a82e234dbbe4a673cb37afc3a1abbc2c);
+        
+    
+            var marker_83c66d06d750df43bbf62fc8934b8494 = L.marker(
+                [26.0325, 50.5106],
+                {
+}
+            ).addTo(map_a82e234dbbe4a673cb37afc3a1abbc2c);
+        
+    
+            var icon_b7f8f11a7ff98f5a9ec2b8c6fb076638 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_83c66d06d750df43bbf62fc8934b8494.bindTooltip(
+                `<div>
+                     Bahrain GP — 2025-03-02
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_83c66d06d750df43bbf62fc8934b8494.setIcon(icon_b7f8f11a7ff98f5a9ec2b8c6fb076638);
+            
+    
+            var marker_62e4b39b765024f252e77ec4b78147af = L.marker(
+                [21.6319, 39.1044],
+                {
+}
+            ).addTo(map_a82e234dbbe4a673cb37afc3a1abbc2c);
+        
+    
+            var icon_9f4fb378ec01a633866465ae11e2f2b7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_62e4b39b765024f252e77ec4b78147af.bindTooltip(
+                `<div>
+                     Saudi Arabian GP — 2025-03-09
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_62e4b39b765024f252e77ec4b78147af.setIcon(icon_9f4fb378ec01a633866465ae11e2f2b7);
+            
+    
+            var marker_0a3ccc35e3fecece44e6743bad926ea6 = L.marker(
+                [-37.8497, 144.968],
+                {
+}
+            ).addTo(map_a82e234dbbe4a673cb37afc3a1abbc2c);
+        
+    
+            var icon_56baffb2d661a0ddb712c6f65cea7b47 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_0a3ccc35e3fecece44e6743bad926ea6.bindTooltip(
+                `<div>
+                     Australian GP — 2025-03-23
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0a3ccc35e3fecece44e6743bad926ea6.setIcon(icon_56baffb2d661a0ddb712c6f65cea7b47);
+            
+    
+            var marker_0aff299944cd266343a4500d968f56af = L.marker(
+                [34.8431, 136.5419],
+                {
+}
+            ).addTo(map_a82e234dbbe4a673cb37afc3a1abbc2c);
+        
+    
+            var icon_e05c5f547c919efc55217be2ba29ba89 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_0aff299944cd266343a4500d968f56af.bindTooltip(
+                `<div>
+                     Japanese GP — 2025-04-06
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0aff299944cd266343a4500d968f56af.setIcon(icon_e05c5f547c919efc55217be2ba29ba89);
+            
+    
+            var marker_c1914654c4e3df626ea2dbfafcca4498 = L.marker(
+                [31.3389, 121.22],
+                {
+}
+            ).addTo(map_a82e234dbbe4a673cb37afc3a1abbc2c);
+        
+    
+            var icon_256cf1bf0ea660235b38ab3926cb4b33 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_c1914654c4e3df626ea2dbfafcca4498.bindTooltip(
+                `<div>
+                     Chinese GP — 2025-04-20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c1914654c4e3df626ea2dbfafcca4498.setIcon(icon_256cf1bf0ea660235b38ab3926cb4b33);
+            
+    
+            var marker_91a0e45603961dc9f60e4ead03767ef9 = L.marker(
+                [25.9581, -80.2389],
+                {
+}
+            ).addTo(map_a82e234dbbe4a673cb37afc3a1abbc2c);
+        
+    
+            var icon_a85d165663490324dc5d9b9565f49a8d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_91a0e45603961dc9f60e4ead03767ef9.bindTooltip(
+                `<div>
+                     Miami GP — 2025-05-04
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_91a0e45603961dc9f60e4ead03767ef9.setIcon(icon_a85d165663490324dc5d9b9565f49a8d);
+            
+    
+            var marker_777590b40bfe765ec6d8dde9d7d14dcd = L.marker(
+                [44.3439, 11.7167],
+                {
+}
+            ).addTo(map_a82e234dbbe4a673cb37afc3a1abbc2c);
+        
+    
+            var icon_80553799e189ea6b4d246f09974cc02a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_777590b40bfe765ec6d8dde9d7d14dcd.bindTooltip(
+                `<div>
+                     Emilia Romagna GP — 2025-05-18
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_777590b40bfe765ec6d8dde9d7d14dcd.setIcon(icon_80553799e189ea6b4d246f09974cc02a);
+            
+    
+            var marker_2db3776e5533aa2b953914379fb4e034 = L.marker(
+                [43.7347, 7.4206],
+                {
+}
+            ).addTo(map_a82e234dbbe4a673cb37afc3a1abbc2c);
+        
+    
+            var icon_d9fe0d4749529549797451b11836895d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_2db3776e5533aa2b953914379fb4e034.bindTooltip(
+                `<div>
+                     Monaco GP — 2025-05-25
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2db3776e5533aa2b953914379fb4e034.setIcon(icon_d9fe0d4749529549797451b11836895d);
+            
+    
+            var marker_37069e43356813d38ff494dde6d4441a = L.marker(
+                [45.5, -73.5228],
+                {
+}
+            ).addTo(map_a82e234dbbe4a673cb37afc3a1abbc2c);
+        
+    
+            var icon_77d84d9409d7cbbf09361253f1d940b4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_37069e43356813d38ff494dde6d4441a.bindTooltip(
+                `<div>
+                     Canadian GP — 2025-06-08
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_37069e43356813d38ff494dde6d4441a.setIcon(icon_77d84d9409d7cbbf09361253f1d940b4);
+            
+    
+            var marker_e6c91cdef4e6b5eed7ee0cddf96fb1ff = L.marker(
+                [41.57, 2.2611],
+                {
+}
+            ).addTo(map_a82e234dbbe4a673cb37afc3a1abbc2c);
+        
+    
+            var icon_edca68359144dd7e71513d591d0379ce = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_e6c91cdef4e6b5eed7ee0cddf96fb1ff.bindTooltip(
+                `<div>
+                     Spanish GP — 2025-06-22
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e6c91cdef4e6b5eed7ee0cddf96fb1ff.setIcon(icon_edca68359144dd7e71513d591d0379ce);
+            
+    
+            var marker_fde5e4e4afb5c5caaf9c35a279ee2703 = L.marker(
+                [47.2197, 14.7647],
+                {
+}
+            ).addTo(map_a82e234dbbe4a673cb37afc3a1abbc2c);
+        
+    
+            var icon_02e99f1659e3a0ef7316084b0e0ace8f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_fde5e4e4afb5c5caaf9c35a279ee2703.bindTooltip(
+                `<div>
+                     Austrian GP — 2025-06-29
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fde5e4e4afb5c5caaf9c35a279ee2703.setIcon(icon_02e99f1659e3a0ef7316084b0e0ace8f);
+            
+    
+            var marker_d253f4ab90a0cce41e5c54e952384905 = L.marker(
+                [52.0786, -1.0169],
+                {
+}
+            ).addTo(map_a82e234dbbe4a673cb37afc3a1abbc2c);
+        
+    
+            var icon_0542449c48029c1eb26f703656c0d885 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_d253f4ab90a0cce41e5c54e952384905.bindTooltip(
+                `<div>
+                     British GP — 2025-07-06
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d253f4ab90a0cce41e5c54e952384905.setIcon(icon_0542449c48029c1eb26f703656c0d885);
+            
+    
+            var marker_b5d3a98eeed079451d36bc1de1151b14 = L.marker(
+                [47.5789, 19.2486],
+                {
+}
+            ).addTo(map_a82e234dbbe4a673cb37afc3a1abbc2c);
+        
+    
+            var icon_487ad4604576e6c59f515e9da1d1e264 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_b5d3a98eeed079451d36bc1de1151b14.bindTooltip(
+                `<div>
+                     Hungarian GP — 2025-07-20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b5d3a98eeed079451d36bc1de1151b14.setIcon(icon_487ad4604576e6c59f515e9da1d1e264);
+            
+    
+            var marker_3518f10036f90eaf025f612d18216163 = L.marker(
+                [50.4372, 5.9714],
+                {
+}
+            ).addTo(map_a82e234dbbe4a673cb37afc3a1abbc2c);
+        
+    
+            var icon_eab13d0e795e9681d674e5149a9deda5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_3518f10036f90eaf025f612d18216163.bindTooltip(
+                `<div>
+                     Belgian GP — 2025-07-27
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3518f10036f90eaf025f612d18216163.setIcon(icon_eab13d0e795e9681d674e5149a9deda5);
+            
+    
+            var marker_1d13cd2060b2291a23608bcfe1a8655b = L.marker(
+                [52.3888, 4.5409],
+                {
+}
+            ).addTo(map_a82e234dbbe4a673cb37afc3a1abbc2c);
+        
+    
+            var icon_5dfd5161dc4aa33bc484d9c464d8e52d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_1d13cd2060b2291a23608bcfe1a8655b.bindTooltip(
+                `<div>
+                     Dutch GP — 2025-08-31
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1d13cd2060b2291a23608bcfe1a8655b.setIcon(icon_5dfd5161dc4aa33bc484d9c464d8e52d);
+            
+    
+            var marker_d277528ef721f15757832cb8068c330f = L.marker(
+                [45.6156, 9.2811],
+                {
+}
+            ).addTo(map_a82e234dbbe4a673cb37afc3a1abbc2c);
+        
+    
+            var icon_a7a02487685b8b0c5e51674932fa2273 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_d277528ef721f15757832cb8068c330f.bindTooltip(
+                `<div>
+                     Italian GP — 2025-09-07
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d277528ef721f15757832cb8068c330f.setIcon(icon_a7a02487685b8b0c5e51674932fa2273);
+            
+    
+            var marker_7f1afee1d36548ad6ccf3a71377dbfe1 = L.marker(
+                [40.3725, 49.8533],
+                {
+}
+            ).addTo(map_a82e234dbbe4a673cb37afc3a1abbc2c);
+        
+    
+            var icon_59383192211346f9342861cc9701b78c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_7f1afee1d36548ad6ccf3a71377dbfe1.bindTooltip(
+                `<div>
+                     Azerbaijan GP — 2025-09-21
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7f1afee1d36548ad6ccf3a71377dbfe1.setIcon(icon_59383192211346f9342861cc9701b78c);
+            
+    
+            var marker_e95cf264a9658649f0e8ea49e646e3ad = L.marker(
+                [1.2914, 103.8644],
+                {
+}
+            ).addTo(map_a82e234dbbe4a673cb37afc3a1abbc2c);
+        
+    
+            var icon_eca890a3298a0214c906d149b2246936 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_e95cf264a9658649f0e8ea49e646e3ad.bindTooltip(
+                `<div>
+                     Singapore GP — 2025-10-05
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e95cf264a9658649f0e8ea49e646e3ad.setIcon(icon_eca890a3298a0214c906d149b2246936);
+            
+    
+            var marker_536835631f57923af92ce7b4188ea2fe = L.marker(
+                [30.1328, -97.6411],
+                {
+}
+            ).addTo(map_a82e234dbbe4a673cb37afc3a1abbc2c);
+        
+    
+            var icon_2593542458486d8643c6e6d1a49dce9d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_536835631f57923af92ce7b4188ea2fe.bindTooltip(
+                `<div>
+                     United States GP — 2025-10-19
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_536835631f57923af92ce7b4188ea2fe.setIcon(icon_2593542458486d8643c6e6d1a49dce9d);
+            
+    
+            var marker_87c09b4a415b598896f9e044e9d188f4 = L.marker(
+                [19.4042, -99.0907],
+                {
+}
+            ).addTo(map_a82e234dbbe4a673cb37afc3a1abbc2c);
+        
+    
+            var icon_bd58b5492c9b0688bcd6683b3b9bf306 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_87c09b4a415b598896f9e044e9d188f4.bindTooltip(
+                `<div>
+                     Mexico City GP — 2025-10-26
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_87c09b4a415b598896f9e044e9d188f4.setIcon(icon_bd58b5492c9b0688bcd6683b3b9bf306);
+            
+    
+            var marker_d5386b4a8394b4fa38e143d7833f30f8 = L.marker(
+                [-23.7036, -46.6997],
+                {
+}
+            ).addTo(map_a82e234dbbe4a673cb37afc3a1abbc2c);
+        
+    
+            var icon_f72cb81035e46da9e6a5d1d86937abfa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_d5386b4a8394b4fa38e143d7833f30f8.bindTooltip(
+                `<div>
+                     São Paulo GP — 2025-11-09
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d5386b4a8394b4fa38e143d7833f30f8.setIcon(icon_f72cb81035e46da9e6a5d1d86937abfa);
+            
+    
+            var marker_4925c6db682489e219b58780dbbeffc7 = L.marker(
+                [36.1147, -115.1728],
+                {
+}
+            ).addTo(map_a82e234dbbe4a673cb37afc3a1abbc2c);
+        
+    
+            var icon_e5b37d2bc5899010a4e785d830561370 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_4925c6db682489e219b58780dbbeffc7.bindTooltip(
+                `<div>
+                     Las Vegas GP — 2025-11-22
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4925c6db682489e219b58780dbbeffc7.setIcon(icon_e5b37d2bc5899010a4e785d830561370);
+            
+    
+            var marker_206f8b1284ecaeb04fb13e3ac8670ad2 = L.marker(
+                [25.49, 51.4542],
+                {
+}
+            ).addTo(map_a82e234dbbe4a673cb37afc3a1abbc2c);
+        
+    
+            var icon_b77741fbb3d1dcd3d92d3a96ee06b213 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_206f8b1284ecaeb04fb13e3ac8670ad2.bindTooltip(
+                `<div>
+                     Qatar GP — 2025-11-29
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_206f8b1284ecaeb04fb13e3ac8670ad2.setIcon(icon_b77741fbb3d1dcd3d92d3a96ee06b213);
+            
+    
+            var marker_fddf8392fa233c0c5ae5cd647a246d2d = L.marker(
+                [24.4672, 54.6031],
+                {
+}
+            ).addTo(map_a82e234dbbe4a673cb37afc3a1abbc2c);
+        
+    
+            var icon_e48c80f9b5608af81799608b850a4087 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_fddf8392fa233c0c5ae5cd647a246d2d.bindTooltip(
+                `<div>
+                     Abu Dhabi GP — 2025-12-07
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fddf8392fa233c0c5ae5cd647a246d2d.setIcon(icon_e48c80f9b5608af81799608b850a4087);
+            
+</script>
+</html>

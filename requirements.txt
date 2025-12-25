@@ -1,0 +1,7 @@
+dash
+dash-bootstrap-components
+pandas
+fastf1
+plotly
+numpy
+requests

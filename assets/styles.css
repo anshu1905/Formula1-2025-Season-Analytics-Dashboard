@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Alex+Brush&family=Parisienne&display=swap');
+
+/* =========================================
+   Cleaned, consolidated and opinionated CSS
+   - Variables for colors and spacing
+   - Removed duplicates and fixed obvious bugs
+   - Improved responsiveness and accessibility fallbacks
+   ========================================= */
+
+:root{
+  --bg:#0b0b0b;
+  --panel-bg: rgba(10,10,10,0.65);
+  --accent:#00e6c3;
+  --accent-2:#00d2b0;
+  --muted:#bdbdbd;
+  --glass: rgba(255,255,255,0.06);
+  --radius: 12px;
+  --page-padding: clamp(20px, 4vw, 60px);
+  --max-width: 1200px;
+}
+
+/* Core + resets */
+*{box-sizing:border-box}
+html,body{height:100%;scroll-behavior:smooth}
+body{
+  margin:0;padding:0;
+  background-color:var(--bg);
+  color:#fff;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+}
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important; transition:none !important}
+}
+
+/* Video background */
+.bg-video{position:fixed;inset:0;width:100vw;height:100vh;object-fit:cover;z-index:-1;filter:brightness(0.75)}
+
+.content-wrapper{position:relative;z-index:1;padding:var(--page-padding);text-align:center}
+
+/* Features container with background image + overlay */
+.features-container{
+  min-height:100vh;display:flex;flex-direction:column;justify-content:flex-start;padding:0 clamp(20px,6vw,50px) 50px;color:#fff;text-align:center;
+  background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url('/assets/background.jpg');
+  background-size:cover;background-position:center;background-repeat:no-repeat;
+}
+
+/* Avoid background-attachment:fixed on small devices (performance & iOS)
+   Keep fixed only where supported and large screens */
+@media (min-width:1100px){
+  .features-container{background-attachment:fixed}
+}
+
+/* NAVBAR */
+.navbar{width:100%;padding:20px 40px;background:transparent;display:flex;align-items:center;justify-content:center}
+.navbar-link-container{display:flex;gap:40px;justify-content:center;align-items:center;flex-wrap:wrap}
+.navbar-link{position:relative;font-size:1.125rem;color:var(--accent);text-decoration:none;padding-bottom:4px;transition:color .25s,transform .25s}
+.navbar-link:hover{color:#57fff0;text-shadow:0 0 8px var(--accent);transform:translateY(-1px)}
+.navbar-link::after{content:"";position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--accent);transition:width .3s}
+.navbar-link:hover::after,.navbar-link.active::after{width:100%}
+.navbar-link.active{color:#57fff0;text-shadow:0 0 8px var(--accent)}
+
+/* HERO */
+.hero-title{text-align:center; width:100%; font-size:clamp(1.75rem,4vw,3.25rem);font-weight:700;letter-spacing:0.02em;margin:10px 0 12px;color:#fff;text-shadow:0 0 10px rgba(255,255,255,.12)}
+.hero-subtitle{font-size:clamp(.9rem,1.6vw,1.125rem);max-width:900px;margin:0 auto 25px;color:#fff;opacity:.92}
+
+
+.home-title{color:#fff;font-size:clamp(2.25rem,6vw,4.25rem);display:inline-block;position:relative}
+.home-title::after{content:"";position:absolute;left:0;bottom:-8px;width:0;height:4px;background:var(--accent);border-radius:4px;animation:underlineSlide 1.2s ease forwards}
+@keyframes underlineSlide{from{width:0}to{width:100%}}
+
+/* Cards / grid */
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:15px;padding-bottom:20px;justify-content:center}
+.feature-card{background:linear-gradient(160deg,rgba(40,40,40,.8),rgba(10,10,10,.9));backdrop-filter:blur(10px);padding:30px;border-radius:16px;border:1px solid rgba(255,255,255,.06);box-shadow:inset 0 1px 1px rgba(255,255,255,.03);transition:transform .28s cubic-bezier(.25,.8,.25,1),box-shadow .28s;cursor:pointer;text-align:left}
+.feature-card:hover{transform:translateY(-8px) scale(1.02);border-color:var(--accent);box-shadow:0 10px 25px -5px rgba(0,230,195,.25),inset 0 0 20px rgba(0,230,195,.12)}
+.feature-icon-box{font-size:32px;margin-bottom:18px;display:inline-flex;align-items:center;justify-content:center;width:60px;height:60px;background:rgba(0,230,195,.05);border-radius:50%;border:2px solid rgba(0,230,195,.18);transition:all .3s}
+.feature-card:hover .feature-icon-box{background:rgba(0,230,195,.12);border-color:var(--accent);box-shadow:0 0 15px rgba(0,230,195,.35);transform:scale(1.08) rotate(3deg)}
+.feature-title{font-size:1.05rem;margin:0 0 8px;font-weight:600;color:#fff}
+.feature-desc{font-size:.95rem;line-height:1.5;color:var(--muted);margin-top:8px}
+.feature-badge{background:linear-gradient(135deg,var(--accent),var(--accent-2));padding:6px 12px;border-radius:20px;font-size:.675rem;font-weight:800;color:#001;position:absolute;top:18px;right:18px;box-shadow:0 2px 10px rgba(0,230,195,.18);transition:transform .2s}
+.feature-card:hover .feature-badge{transform:scale(1.05)}
+
+.home-card{background:rgba(0,0,0,.55);padding:30px;border-radius:12px;width:300px;text-align:center;backdrop-filter:blur(5px);border:1px solid rgba(255,255,255,.06);margin:0 auto}
+.home-card:hover{transform:translateY(-8px);border-color:#00f2ff}
+
+/* Plotly / charts */
+.comparison-chart{width:100%;max-width:var(--max-width);margin:0 auto 50px;padding:20px;border-radius:16px;background:rgba(0,0,0,.45);box-shadow:0 0 25px rgba(0,255,255,.18);backdrop-filter:blur(8px);height:480px}
+.comparison-chart .js-plotly-plot,.comparison-chart .plot-container,.comparison-chart svg{background:transparent}
+.comparison-chart .js-plotly-plot{height:100%;max-height:480px;border-radius:16px;padding:10px;border:1px solid rgba(0,255,255,.18);box-shadow:inset 0 0 10px rgba(0,255,255,.08)}
+
+/* Disable hover transform where the UI wants it — keep non-important transitions for other contexts */
+.race-page .js-plotly-plot:hover{transform:none !important;box-shadow:none !important}
+
+/* Select / dropdown (React-Select / Virtualized) */
+.custom-dropdown{flex-grow:1;min-width:220px}
+.custom-dropdown .Select-control{background-color:#111;border-radius:12px;border:1px solid #444;padding:6px;box-shadow:0 0 6px rgba(0,255,255,.12);transition:box-shadow .25s,border .25s}
+.custom-dropdown .Select-control:hover{border-color:#00f2ff;box-shadow:0 0 12px rgba(0,255,255,.18);transform:translateY(-2px)}
+.custom-dropdown .Select-placeholder,.custom-dropdown .Select-value-label{color:#ddd;font-size:1rem}
+.custom-dropdown .Select-arrow-zone .Select-arrow{border-color:var(--accent) transparent transparent}
+.custom-dropdown .Select-menu-outer{background-color:#222;border-radius:10px;border:1px solid #333;animation:dropdownSlide .2s}
+.custom-dropdown .Select-option{background:#222;color:#fff}
+.custom-dropdown .Select-option:hover{background:var(--accent);color:#000}
+@keyframes dropdownSlide{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+/* z-index housekeeping for dropdowns */
+.Select-menu-outer{z-index:10000}
+.Select-control{z-index:1000}
+
+/* Misc helpers */
+.signature{font-family:"Alex Brush","Parisienne",cursive;font-size:2.2rem;text-shadow:0 0 6px rgba(255,255,255,.12)}
+.VirtualizedSelectOption{white-space:nowrap}
+.dash-graph{z-index:0}
+
+/* RESULTS / RACE CARDS consolidated (removed repeated declarations) */
+.results-summary{max-width:var(--max-width);margin:30px auto 40px}
+.result-card{background:linear-gradient(160deg,rgba(40,40,40,.75),rgba(10,10,10,.9));backdrop-filter:blur(10px);padding:26px;border-radius:16px;border-left:4px solid var(--accent);box-shadow:0 0 10px rgba(0,194,168,.12);transition:transform .25s,box-shadow .25s;height:100%}
+.result-card:hover{transform:translateY(-6px);box-shadow:0 0 28px rgba(0,194,168,.25)}
+.result-card-title{font-size:.8rem;letter-spacing:1px;text-transform:uppercase;color:#9aa0a6;margin-bottom:6px}
+.result-card-value{font-size:1.3rem;font-weight:600;color:#fff}
+
+/* PAGE ISOLATION FOR RACE PAGE: fixed bug in rgba and tightened specificity
+   Keep the rule simpler and correct the invalid rgba call that previously existed */
+.race-page{display:block;width:100%;min-height:100vh;padding:30px 40px;background:linear-gradient(rgba(5,5,5,.98),rgba(12,12,12,.98));color:#e6f7f2}
+
+.race-page .race-controls{max-width:var(--max-width);margin:0 auto 20px;display:flex;justify-content:center;align-items:center;gap:24px}
+.race-page .custom-dropdown{width:100%;max-width:560px;margin:0 auto}
+.race-page .custom-dropdown .Select-control{background-color:#111;border-radius:14px;border:1px solid rgba(255,255,255,.08);padding:8px 14px;min-height:48px}
+.race-page .custom-dropdown .Select-value-label,.race-page .custom-dropdown .Select-placeholder{color:#fff;font-size:1rem}
+.race-page .custom-dropdown .Select-menu-outer{background-color:#111;border:1px solid rgba(255,255,255,.08);z-index:10000}
+.race-page .custom-dropdown .Select-option{background:#111;color:#fff}
+.race-page .custom-dropdown .Select-option:hover{background:var(--accent);color:#000}
+
+/* ROWS & PLOTS */
+.race-row{display:flex;justify-content:space-between;align-items:flex-start;gap:2%;max-width:var(--max-width);margin:0 auto;flex-wrap:wrap}
+.race-row .dash-graph{flex:1 1 48%;max-width:48%;min-height:420px;height:420px;overflow:hidden;background:var(--panel-bg);border-radius:12px;padding:10px;margin:40px auto}
+.race-row .dash-graph-full{width:100%;max-width:var(--max-width);min-height:420px;height:420px;margin:26px auto;background:var(--panel-bg);border-radius:12px;padding:10px}
+
+/* Responsive adjustments */
+@media (max-width:1100px){.feature-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:900px){
+  .race-page .race-controls{flex-direction:column;gap:14px}
+  .race-row .dash-graph,.race-row .dash-graph-full{max-width:100%;flex-basis:100%;height:380px}
+}
+@media (max-width:700px){.feature-grid{grid-template-columns:1fr;gap:22px}.navbar-link-container{gap:20px}}
+
+/* Driver page small layout helpers */
+.driver-title-block{max-width:900px;margin:40px auto 20px;text-align:center}
+.driver-filters{max-width:720px;margin:0 auto 30px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+.driver-name{text-align:center;font-size:2.125rem;margin-bottom:30px;color:#fff}
+
+/* Cleaning edge cases */
+.dash-graph,.dash-graph-full{width:100%;max-width:var(--max-width);margin:40px auto;padding:20px;background:rgba(10,10,10,.65);border-radius:16px}
+
+/* Make the season / GP controls stretch wider and be readable */
+.race-controls {
+  width: 100%;
+  max-width: 1400px; /* or whichever container width you prefer */
+  margin: 0 auto;
+  display: flex;
+  gap: 4%;
+  align-items: center;
+}
+
+/* Ensure each dropdown grows to occupy available space */
+.race-controls .custom-dropdown {
+  flex: 1 1 48%;
+  min-width: 360px;   /* increase for more readable text */
+  max-width: none;    /* remove prior hard cap */
+}
+
+
+/* =========================================
+   FIX: Dropdown menus overlapping each other
+   (Comparisons page / multi-row dropdowns)
+   ========================================= */
+
+/* Ensure dropdown parents do NOT clip menus */
+.comparison-page-container,
+.comparison-page-container > div {
+  overflow: visible !important;
+}
+
+/* Force dropdown wrapper into its own stacking context */
+.comparison-page-container .custom-dropdown {
+  position: relative;
+  z-index: 50;
+}
+
+/* Raise the active dropdown above all others */
+.comparison-page-container .custom-dropdown:focus-within {
+  z-index: 200;
+}
+
+/* Absolutely ensure menu floats on top */
+.comparison-page-container .Select-menu-outer {
+  position: absolute !important;
+  z-index: 9999 !important;
+}
